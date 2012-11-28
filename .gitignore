@@ -11,3 +11,8 @@
 *.lai
 *.la
 *.a
+
+*.exe
+ipch/
+Debug/
+AlgoWars/Debug/
