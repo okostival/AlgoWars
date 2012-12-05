@@ -25,7 +25,7 @@ bool compare (const ModuleNode& lhs, const ModuleNode& rhs);
 
 int main() 
 {
-	ifstream inFile ("Input.dat");
+	ifstream inFile ("input.dat");
 	int ** requirements;
 	int * indices;
 	int * bestOption;
@@ -85,7 +85,8 @@ int main()
 		tempNode.index = i;
 		tempNode.size = sum;
 
-		moduleNodes.emplace(moduleNodes.end(), tempNode);
+		//moduleNodes.emplace(moduleNodes.end(), tempNode);
+		moduleNodes.push_back(tempNode);
 	}
 
 	sort (moduleNodes.begin(), moduleNodes.end(), compare);
@@ -206,11 +207,15 @@ int main()
 		}
 	}
 		
+	ofstream outFile("output.txt");
 	for (int i=0; i<modules; i++)
 	{
 		cout << bestOption[i] + 1 << " " ;
+		outFile << bestOption[i] + 1 << " ";
 	}
 	cout << endl << minLength << endl;
+	outFile << endl << minLength << endl;
+	outFile.close();
 
 	for (int i=0; i<modules; i++)
 	{

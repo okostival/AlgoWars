@@ -12,7 +12,7 @@ unsigned int calcLength(int modules, int **& requirements, int *& indices);
 
 int main() 
 {
-	ifstream inFile ("Input.dat");
+	ifstream inFile ("input.dat");
 	int ** requirements;
 	int * indices;
 	int modules;
